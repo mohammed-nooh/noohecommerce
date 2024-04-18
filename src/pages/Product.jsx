@@ -5,6 +5,7 @@ import NewsLetter from "../components/NewsLetter"
 import Footer from "../components/Footer"
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
+import { mobile } from "../reponsive"
 
 const Container=styled.div`
     
@@ -12,15 +13,23 @@ const Container=styled.div`
 const Wrapper=styled.div`
     padding: 50px;
     display: flex;
+    ${mobile({padding:"10px",flexDirection:"column"})}
 `
-const ImgContainer=styled.img`
+const ImgContainer=styled.div`
     flex: 1;
-    width: 100%;
-    height: 90vh;
+    
 `
+const Image=styled.img`
+  width: 100%;
+    height: 90vh;
+    ${mobile({height:"40vh"})}
+`
+
+
 const InfoContainer=styled.div`
     flex: 1;
     padding: 0 50px;
+    ${mobile({padding:"10px"})}
 `
 
 const Title=styled.h1`
@@ -38,6 +47,7 @@ const FilterContainer=styled.div`
   margin: 30px 0;
   justify-content: space-between;
   width: 40%;
+  ${mobile({width:"100%"})}
 `
 const Filter=styled.div`
   display: flex;
@@ -68,6 +78,7 @@ const AddContainer=styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 30px 0;
+  ${mobile({width:"100%"})}
 `
 const AmountContainer=styled.div`
   display: flex;
@@ -102,8 +113,8 @@ const Product = () => {
         <NavBar/>
         <Announcement/>
         <Wrapper>
-            <ImgContainer src="https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png">
-
+            <ImgContainer >
+              <Image src="https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png"/>
             </ImgContainer>
             <InfoContainer>
             <Title>Denim Jumpsuit</Title>
